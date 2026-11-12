@@ -1,4 +1,7 @@
-
+// Diferencia entre console.log() y return:
+// console.log() muestra un valor en la consola
+// return devuelve el valor de una funcion
+// con return puedo guardar el resultado en una variable y usarlo despues 
 function sumar(a, b) {
   return a + b;
 }
