@@ -59,4 +59,9 @@ const productos = [
   { id: 9, nombre: 'Parlante inalambrico', precio: 60000, categoria: 'Audio', stock: 10},
   { id: 10, nombre: 'Cargador portatil', precio: 40000, categoria: 'Accesorios', stock: 7}
 ];
-console.log(productos.length); // debe salir 10 o más
+console.log(productos.length); 
+//// reto cuatro 
+
+productos.forEach((producto, indice) => {
+  console.log(`${indice + 1}. ${producto.nombre} - $${producto.precio} - stock: ${producto.stock}`);
+});
