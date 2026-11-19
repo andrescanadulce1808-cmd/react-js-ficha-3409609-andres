@@ -98,3 +98,19 @@ console.log(precioMedio);
 console.log(perifericos);
 console.log(producto5);
 console.log(buscarProducto(2));
+
+// Reto 7: some(), every() y reduce()
+const hayAgotados = productos.some(producto => producto.stock === 0);
+const hayMuyCaros = productos.some(producto => producto.precio > 1000000);
+const preciosValidos = productos.every(producto => producto.precio > 0);
+const stockValido = productos.every(producto => producto.stock >= 0);
+const valorInventario = productos.reduce(
+  (total, producto) => total + producto.precio * producto.stock,
+  0
+);
+
+console.log('¿Hay agotados?', hayAgotados);
+console.log('¿Hay productos de más de $1.000.000?', hayMuyCaros);
+console.log('¿Todos los precios son mayores que cero?', preciosValidos);
+console.log('¿Todo el stock es mayor o igual que cero?', stockValido);
+console.log('Valor del inventario:', valorInventario);
