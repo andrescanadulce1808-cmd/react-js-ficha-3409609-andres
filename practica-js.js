@@ -78,3 +78,23 @@ console.log(nombres);
 console.log(preciosConIva);
 console.log(nombresMayuscula);
 console.log(resumenProductos);
+// Reto 6: filter() y find()
+const disponibles = productos.filter(producto => producto.stock > 0);
+const producto3 = productos.find(producto => producto.id === 3);
+
+const caros = productos.filter(producto => producto.precio > 100000);
+const precioMedio = productos.filter(
+  producto => producto.precio >= 50000 && producto.precio <= 200000
+);
+const perifericos = productos.filter(producto => producto.categoria === 'Perifericos');
+const producto5 = productos.find(producto => producto.id === 5);
+
+const buscarProducto = (id) => productos.find(producto => producto.id === id);
+
+console.log(disponibles);
+console.log(producto3);
+console.log(caros);
+console.log(precioMedio);
+console.log(perifericos);
+console.log(producto5);
+console.log(buscarProducto(2));
