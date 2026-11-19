@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
   const disponibles = productos.filter(producto => producto.stock > 0);
+  const hayAgotados = productos.some(producto => producto.stock === 0);
   const valorInventario = productos.reduce(
     (total, producto) => total + producto.precio * producto.stock,
     0
@@ -14,13 +15,18 @@ function App() {
       <h1>Tienda tecnológica</h1>
       <p>Productos disponibles: {disponibles.length}</p>
       <p>Valor del inventario: ${valorInventario}</p>
+      <p>{hayAgotados ? 'Hay productos agotados' : 'Todos los productos tienen stock'}</p>
 
       <section className="productos">
         {productos.map(producto => (
-          <ProductoCard
-            key={producto.id}
-            producto={producto}
-          />
+          <ProductoCard key={producto.id} producto={producto} />
+        ))}
+      </section>
+
+      <h2>Solo disponibles</h2>
+      <section className="productos">
+        {disponibles.map(producto => (
+          <ProductoCard key={producto.id} producto={producto} />
         ))}
       </section>
     </main>
