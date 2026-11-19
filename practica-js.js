@@ -114,3 +114,21 @@ console.log('¿Hay productos de más de $1.000.000?', hayMuyCaros);
 console.log('¿Todos los precios son mayores que cero?', preciosValidos);
 console.log('¿Todo el stock es mayor o igual que cero?', stockValido);
 console.log('Valor del inventario:', valorInventario);
+// Reto 8: JavaScript moderno
+console.log(`El producto ${productos[0].nombre} cuesta $${productos[0].precio}`);
+
+const { nombre, precio, stock } = productos[0];
+console.log(nombre, precio, stock);
+
+const productoActualizado = {
+  ...productos[0],
+  stock: 8
+};
+const estado = productoActualizado.stock > 0 ? 'Disponible' : 'Agotado';
+console.log(estado);
+
+// Tarea: copia con otro precio y stock sin modificar el original
+const copiaProducto = { ...productos[1], precio: 95000, stock: 4 };
+const estadoCopia = copiaProducto.stock > 0 ? 'Disponible' : 'Agotado';
+console.log(`${copiaProducto.nombre} ahora cuesta $${copiaProducto.precio} y está ${estadoCopia}`);
+console.log('Original sin cambios:', productos[1]);
